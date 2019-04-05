@@ -147,7 +147,7 @@ void turnfoos(int leftPercent, int rightPercent, int counts) {
 }
 //This is our function for dropping the token into the bottom basket.
 void tokencomp(int leftPercent, int rightPercent, int motor_percent, int expected_counts){
-    //move foreard for about 6 inches
+    //move forward for about 6 inches
     expected_counts=220;
     motor_percent=25;
     move_forward(motor_percent,expected_counts);
@@ -159,9 +159,9 @@ void tokencomp(int leftPercent, int rightPercent, int motor_percent, int expecte
     //move forward for about 7 inches
     expected_counts=250;
     move_forward(motor_percent,expected_counts);
-    //open claw 
+    //open claw
     robot_arm.SetDegree(100);
-    //move backward for about 5 inches 
+    //move backward for about 5 inches
     motor_percent=-25;
     expected_counts=195;
     move_forward(motor_percent,expected_counts);
@@ -180,7 +180,7 @@ void dancecomp(int leftPercent, int rightPercent, int motor_percent, int expecte
      LCD.WriteLine("The CDS Value is:");
      LCD.Write(cds.Value());
     if(cds.Value()<1){
-        //display to the screen what the light is read as 
+        //display to the screen what the light is read as
         LCD.WriteLine("The light is red");
         //turn right
         leftPercent=25;
@@ -189,44 +189,44 @@ void dancecomp(int leftPercent, int rightPercent, int motor_percent, int expecte
         turn(leftPercent,rightPercent,expected_counts);
         //run into the light for 5 seconds with no time
         motor_percent=-25;
-        expected_counts=2200;
+        expected_counts=900;
         move_forwarddance(motor_percent,expected_counts);
         //move forward for a small amount to release the button
         expected_counts=60;
         motor_percent=25;
         move_forward(motor_percent,expected_counts);
-        //90 degree turn to the left 
+        //90 degree turn to the left
         leftPercent=0;
         rightPercent=25;
         expected_counts=220;
         turn(leftPercent,rightPercent,expected_counts);
-        //move backward for about 13 inches 
+        //move backward for about 13 inches
         motor_percent=-25;
         expected_counts=500;
         move_forward(motor_percent,expected_counts);
-        //turn left for 90 degrees 
+        //turn left for 90 degrees
         rightPercent=0;
         leftPercent=25;
         expected_counts=220;
         turn(leftPercent,rightPercent,expected_counts);
         //move backward to decrease friction for a touch
         motor_percent=-25;
-        expected_counts=50;
+        expected_counts=175;
         move_forward(motor_percent,expected_counts);
-        //move up the ramp at equal percentages 
-        leftPercent=70;
+        //move up the ramp at equal percentages
+        leftPercent=71;
         rightPercent=70;
         expected_counts=1000;
         move_forwardfoos(leftPercent,rightPercent,expected_counts);
         //move with left slight more once on the second level
         leftPercent=28;
         rightPercent=25;
-        expected_counts=560;
+        expected_counts=760;
         move_forwardfoos(leftPercent,rightPercent,expected_counts);
 
     }
     else if(cds.Value()>1){
-        //display that the light is blue 
+        //display that the light is blue
         LCD.WriteLine("The light is blue");
         //move backward for about 7 inches
         motor_percent=-25;
@@ -257,7 +257,7 @@ void dancecomp(int leftPercent, int rightPercent, int motor_percent, int expecte
 
 //This is our function for the foosball
 void foosballcomp(int leftPercent,int rightPercent, int motor_percent, int expected_counts){
-    //move backward for about 6 inches 
+    //move backward for about 6 inches
     expected_counts=200;
     motor_percent=-25;
     move_forward(motor_percent,expected_counts);
@@ -292,12 +292,12 @@ void levercomp(int leftPercent, int rightPercent, int motor_percent, int expecte
   expected_counts=10;
   motor_percent=25;
   move_forward(motor_percent,expected_counts);
-  //left turn for about 30 degrees 
+  //left turn for about 30 degrees
   leftPercent=0;
   rightPercent=25;
   expected_counts=90;
   turn(leftPercent,rightPercent,expected_counts);
-  //move forward for around 1.5 feet 
+  //move forward for around 1.5 feet
   expected_counts=630;
   motor_percent=25;
   move_forward(motor_percent,expected_counts);
@@ -306,8 +306,8 @@ void levercomp(int leftPercent, int rightPercent, int motor_percent, int expecte
   rightPercent=0;
   expected_counts=234;
   turn(leftPercent,rightPercent,expected_counts);
-  //move forward with more power for the left motor 
-  //to go around the orb 
+  //move forward with more power for the left motor
+  //to go around the orb
   leftPercent=23;
   rightPercent=18;
   expected_counts=470;
@@ -382,7 +382,7 @@ void adjustedComp(int leftPercent, int rightPercent, int expected_counts, int mo
      dancecomp(leftPercent,rightPercent, motor_percent,expected_counts);
      //call the foosballcomp function
      foosballcomp(leftPercent,rightPercent,motor_percent,expected_counts);
-     //call the levercomp function 
+     //call the levercomp function
      levercomp(leftPercent,rightPercent,motor_percent,expected_counts);
 }
 
